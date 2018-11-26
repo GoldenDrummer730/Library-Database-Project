@@ -1,0 +1,105 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Forgot password</title>
+  </head>
+
+  <<style media="screen">
+    body{
+			margin:0;
+			padding:0;
+			font-family:"Times New Roman";
+			font-size:14px;
+      background: #000000
+		}
+
+    .forgot-box{
+      width: 512px;
+      height: 216px;
+      position:absolute;
+			left:50%;
+			top:50%;
+			z-index:100;
+			margin-left:-256px;
+			margin-top:-113px;
+			background-color:#e4f5fa;
+			box-sizing:border-box;
+			border-radius:10px;
+			border:solid 1px #e1dedd;
+			padding:20px;
+    }
+
+    .heading-title {
+      font-size: 20px;
+      font-weight: bold;
+      font-align: center;
+      margin-bottom: 20px;
+    }
+
+    .forgot-box input[type='text']{
+			display:block;
+			margin-bottom:10px;
+			width:100%;
+			box-sizing:border-box;
+			padding:10px;
+			border-radius:2px;
+			border:solid 1px #efeeed;
+		}
+
+    .forgot-box input[type = "text"]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .button{
+			display: inline-block;
+			height: 30px;
+			padding: 0 30px;
+			color: #fff;
+			background-color: #1eaedb;
+			border-color: #1eaedb;
+			line-height: 30px;
+			letter-spacing: .1rem;
+			text-transform: uppercase;
+			border-radius: 4px;
+			border: 1px solid #bbb;
+			cursor: pointer;
+			box-sizing: border-box;
+		}
+
+    .button:hover {
+        opacity:1;
+    }
+
+
+    @media only screen and (max-width: 480px) {
+			.forget-box {
+				position: relative;
+				left: 0;
+				top: 0;
+				max-width: 320px;
+				margin: 0 auto;
+				margin-top:30px;
+			}
+		}
+
+		@media only screen and (max-width: 320px) {
+			.forget-box {
+				max-width: 240px;
+			}
+		}
+  </style>
+
+  <body>
+    <<div class="forgot-box">
+      <form action = "/email-success.html">
+        <div class="heading-title">Forgot Password</div>
+        <label>Please enter in an email to reset your password: </label>
+        <input type="text" placeholder="johnsmith@email.com" id = "email"/>
+        <button type="submit" formtarget="_self">Send request</button>
+
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<!-- <title>How to create login form template using HTML5 and CSS - Bytutorial.com</title> -->
+		<!-- Source: https://bytutorial.com/blogs/html5/how-to-create-login-form-template-using-html5-and-css3 -->
+    <title> Library Login </title>
+	</head>
+	<style>
+		body{
+			margin:0;
+			padding:0;
+			font-family:"Times New Roman";
+			font-size:14px;
+      background: #000000
+		}
+
+		.login-box{
+			width:400px;
+			height:300px;
+			position:absolute;
+			left:50%;
+			top:50%;
+			z-index:100;
+			margin-left:-200px;
+			margin-top:-150px;
+			background-color:#e4f5fa;
+			box-sizing:border-box;
+			border-radius:10px;
+			border:solid 1px #e1dedd;
+			padding:20px;
+		}
+
+		.heading-title{
+			font-size:20px;
+			font-weight:bold;
+			text-align:center;
+			margin-bottom:20px;
+		}
+
+		.login-box label{
+			display:block;
+			margin-bottom:5px;
+		}
+
+		.login-box input[type='text'], .login-box input[type='password']{
+			display:block;
+			margin-bottom:10px;
+			width:100%;
+			box-sizing:border-box;
+			padding:10px;
+			border-radius:2px;
+			border:solid 1px #efeeed;
+		}
+
+    .login-box input[type=text]:focus, .login-box input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+		.button{
+			display: inline-block;
+			height: 30px;
+			padding: 0 30px;
+			color: #fff;
+			background-color: #1eaedb;
+			border-color: #1eaedb;
+			line-height: 30px;
+			letter-spacing: .1rem;
+			text-transform: uppercase;
+			border-radius: 4px;
+			border: 1px solid #bbb;
+			cursor: pointer;
+			box-sizing: border-box;
+		}
+
+    .button:hover {
+        opacity:1;
+    }
+
+		.m-top{
+			margin-top:10px;
+		}
+
+		@media only screen and (max-width: 480px) {
+			.login-box {
+				position: relative;
+				left: 0;
+				top: 0;
+				max-width: 320px;
+				margin: 0 auto;
+				margin-top:30px;
+			}
+		}
+
+		@media only screen and (max-width: 320px) {
+			.login-box {
+				max-width: 240px;
+			}
+		}
+	</style>
+	<body>
+		<div class="login-box">
+			<form>
+				<div class="heading-title">Welcome to The Library!</div>
+				<label>Id:</label>
+				<input type="text" placeholder="XXXXXXXXX" id="userID"/>
+				<label>Password:</label>
+				<input type="password" id="txtPassword"/>
+				<button id="btnLogin" class='button'>Login</button>
+				<div class="m-top"><a href="forgotpass.html">Forgot Password?</a></div>
+		    <div class="m-top">Don't have an account? <a href="signup">Create account</a></div>
+
+			</form>
+		</div>
+	</body>
+</html>
