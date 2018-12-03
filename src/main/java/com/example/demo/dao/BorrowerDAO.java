@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.domain.Book_Authors; //Remember to import
 import com.example.demo.domain.Book_AuthorsMapper;
+import com.example.demo.domain.Borrower;
+import com.example.demo.domain.BorrowerMapper;
 
 @Component
 public class BorrowerDAO{
@@ -21,13 +23,14 @@ public class BorrowerDAO{
   public List<Borrower> getBorrowerNames(){
     try{
       List<Borrower> borrowerNames = new ArrayList<Borrower>();
-      bm = new BorrowerMapper();
-      borrowerNames = bm.getBorrowerNames();
+      //borrowerNames = bm.getBorrowerNamesByCardNo);
       return borrowerNames;
     }
 
     catch (Exception e){
       System.out.println("Error in BorrowerDAO");
     }
+    
+    return null;
   }
 }

@@ -1,19 +1,36 @@
-<<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Library Shelves</title>
   </head>
 
-  <<style media="screen">
-
-
-
+  <style media="screen">
 
 
 
   </style>
   <body>
+
+    <h1>Books Table</h1>
+
+    <table>
+      <tr>
+        <th>BookId </th>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th></th>
+      </tr>
+
+      <tr th:each = "book: ${booksList}">
+        <td th:text = "${book.bookId}"/>
+        <td th:text = "${book.title}"/>
+        <td th:text = "${book.publisher}"/>
+        <td>
+          <a th.href= "@{'/checkout/' + ${book.title}}"> Checkout </a>
+        <td>
+      </tr>
+    </table>
 
   </body>
 </html>

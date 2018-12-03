@@ -1,37 +1,37 @@
 package com.example.demo.domain;
 
 public class Book {
-	private long BookId;
-	private String Title;
-	private String Publisher;
+	private long bookId;
+	private String title;
+	private String publisher;
 	public Book(long bookId, String title, String publisher) {
 		super();
-		BookId = bookId;
-		Title = title;
-		Publisher = publisher;
+		bookId = bookId;
+		title = title;
+		publisher = publisher;
 	}
-	public long getBookId() {
-		return BookId;
+	public long getbookId() {
+		return bookId;
 	}
-	public void setBookId(long bookId) {
-		BookId = bookId;
+	public void setbookId(long bookId) {
+		bookId = bookId;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		title = title;
 	}
 	public String getPublisher() {
-		return Publisher;
+		return publisher;
 	}
 	public void setPublisher(String publisher) {
-		Publisher = publisher;
+		publisher = publisher;
 	}
 	@Override
 	public String toString() {
-		return "Book [BookId=" + BookId + ", Title=" + Title + ", Publisher=" + Publisher + "]";
+		return "Book [bookId=" + bookId + ", title=" + title + ", publisher=" + publisher + "]";
 	}
-	
-	
+
+
 }

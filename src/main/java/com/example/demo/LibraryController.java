@@ -8,14 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.demo.domain.Book;
 import com.example.demo.domain.Book_Authors;
 import com.example.demo.domain.Employee;
+import com.example.demo.service.BookService;
 import com.example.demo.service.Book_AuthorService;
 import com.example.demo.service.EmployeeService;
 
 public class LibraryController {
 	@Autowired
 	Book_AuthorService authorService;
+
+	@Autowired
+	BookService bookService;
 
     @GetMapping("/authornames")
     public String getAuthorName(Model model) { //The model applies the business logic
@@ -24,12 +29,14 @@ public class LibraryController {
         model.addAttribute("authorList", authorList);
         return "authorLanding";
     }
-    
-    @GetMapping("/editEmployee")
-    public String editEmployee(@PathVariable String ssn, @ModelAttribute Employee employee, Model model) {
-    	//empList = employeeService.getEmpList();
-        model.addAttribute("employee", employee);
-        return "editEmployee";
-    }
-	
+
+	@GetMapping("/shop")
+	public String viewBooks(Model model){
+		List<Book> booksList = new ArrayList<Book>();
+		booksList = bookService.getAllBooks();
+		model.addAttribute("booksList", booksList);
+		return "booksList";
+	}
+
+
 }
