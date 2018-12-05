@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book List</title>
+    <link rel="stylesheet" type="text/css" href="css/example.css" />
+    <link rel="stylesheet" type="text/css" href="css/.css" />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+</head>
+<body>
+   
+   	
+   	<div class = "header">
+   		<h1></h1>
+   	</div>
+   	
+    <h1>Our Collection</h1>
+    <table class = "prettytable">
+    
+    <tr>
+    <th>BookId</th>
+    <th>Title</th>
+    <th>Publisher</th>
+    <th></th>
+    
+    </tr>
+    
+     <tr th:each="book: ${bookList}">
+        <td th:text="${book.BookId}" />
+        <td th:text="${book.Title}"/>
+        <td th:text="${book.Publisher}" />
+        
+        <td>
+        <a th:href= "@{'/checkAvailability/' + ${book.Title}}">Check Availability</a>
+        </td>
+
+    </tr>
+    
+    
+    </table> 
+    
+    
+</body>
+</html>
