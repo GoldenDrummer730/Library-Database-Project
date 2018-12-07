@@ -1,35 +1,36 @@
-package com.example.service;
+package com.example.demo.service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.dao.BookDAO;
-import com.example.domain.Book;
+import com.example.demo.dao.BookDAO;
+import com.example.demo.domain.Book;
+
 
 @Component
-public class BookService{
+public class BookService {
+	
+	@Autowired
+	BookDAO bookDAO;
+	
+	public BookService() {
+		
+	}
 
-  @Autowired
-  BookDAO bookDAO;
+	public List<Book> getBookList() {
+		List<Book> bookList = new ArrayList<Book>();
+		//BookDAO bookDAO = new BookDAO();
+		bookList = bookDAO.getBookList();
+		return bookList;
+	}
+	
+	
+	
 
-
-  public List<Book> getAllBooks(){
-    try{
-      List<Book> booksList = new ArrayList<Book>();
-      //bookDAO = new BookDAO();
-      booksList = bookDAO.getAllBooks();
-      return booksList;
-    } catch(Exception e) {
-    	System.out.println("ERROR: Error in getAllBooks in BookService");
-    }
-    
-    return null;
-  }
 }

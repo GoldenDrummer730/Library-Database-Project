@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.demo.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.dao.Book_AuthorsDAO;
-import com.example.domain.Book_Authors;
+import com.example.demo.dao.Book_AuthorsDAO;
+import com.example.demo.domain.Book_Authors;
 
 @Component
 public class Book_AuthorService {
