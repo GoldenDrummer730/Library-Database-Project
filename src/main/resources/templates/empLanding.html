@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee List</title>
+    <link rel="stylesheet" type="text/css" href="css/example.css" />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style = "background-color:#E6E6FA">
+    
+    <h1>Employees</h1>
+    <table class = "prettytable">
+    
+    <tr>
+    <th>SSN</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Salary</th>
+    <th></th>
+    
+    </tr>
+    
+     <tr th:each="employee: ${empList}">
+        <td th:text="${employee.ssn}" />
+        <td th:text="${employee.fname}" />
+        <td th:text="${employee.lname}" />
+        <td th:text="${employee.salary}" />
+        <td>
+        <a th:href="@{'/editEmployee/' + ${employee.ssn}}">edit</a>
+        </td>
+
+    </tr>
+    
+    
+    </table> 
+    
+    
+</body>
+</html>
