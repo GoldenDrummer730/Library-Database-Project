@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.demo.dao;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -6,50 +6,49 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.domain.Employee;
+import com.example.demo.domain.Employee;
+import com.example.demo.domain.EmployeeMapper;
+
 
 @Component
 public class EmployeeDAO {
+	
+	@Autowired
+	EmployeeMapper employeeMapper;
 	
 	public EmployeeDAO() {
 		
 	}
 
 	public List<Employee> getEmpList() {
-		List<Employee> empList = new ArrayList<Employee>();
-		Employee e1 = new Employee("Test", "Test LNAME", "999887775", new BigDecimal(45000));
-		Employee e2 = new Employee("Test2", "Test2 LNAME", "999887776", new BigDecimal(55000));
-		return empList;
-	}
-	
-	public List<Employee> getEmpListBySalary(BigDecimal salary) {
-		List<Employee> empList = new ArrayList<Employee>();
-		
+		List<Employee> empList = new ArrayList<Employee>();	
+		empList = employeeMapper.getEmpList();
+		//Employee e1 = new Employee("Test1","Test1 LName","1234",new BigDecimal(10000.00));
+		//Employee e2 = new Employee("Test2","Test2 LName","2345",new BigDecimal(20000.00));
+		//empList.add(e1);
+		//empList.add(e2);
 		return empList;
 	}
 	
 
-	public List<HashMap<String,Object>> getDepts() {
-		List<HashMap<String,Object>> deptList = new ArrayList<HashMap<String,Object>>();
-	
-		return deptList;
+	public void insertEmployee(Employee employee) {
+		
 	}
-	
-	public void insertEmployee(Employee e) {
+
+	public Employee getEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeMapper.getEmployee(employee);
+	}
+
+	public void updateEmployee(Employee employee) {
+		
+		employeeMapper.updateEmployee(employee);
 		
 	}
 	
-	public void updateSalary(String ssn) {
-		
-	}
 	
-	public Employee getEmployeeBySSN(String ssn) {
-		Employee e = null;
-		
-		
-		return e;
-	}
 
 }

@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.demo.dao;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,28 +9,31 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.domain.Book_Authors; //Remember to import
-import com.example.mapper.Book_AuthorsMapper;
-import com.example.domain.Borrower;
-import com.example.mapper.BorrowerMapper;
+import com.example.demo.domain.Borrower;
+import com.example.demo.domain.BorrowerMapper;
+
 
 @Component
-public class BorrowerDAO{
+public class BorrowerDAO {
+	
+	@Autowired
+	BorrowerMapper borrowerMapper;
+	
+	public BorrowerDAO() {
+		
+	}
 
-  @Autowired
-  BorrowerMapper bm;
+	public List<Borrower> getAllBorrowerInfo() {
+		List<Borrower> borrowerList = new ArrayList<Borrower>();	
+		borrowerList = borrowerMapper.getAllBorrowerInfo();
+		
+		return borrowerList;
+	}
 
-  public List<Borrower> getBorrowerNames(){
-    try{
-      List<Borrower> borrowerNames = new ArrayList<Borrower>();
-      //borrowerNames = bm.getBorrowerNamesByCardNo);
-      return borrowerNames;
-    }
+	public void insertNewBorrower(Borrower borrower) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
-    catch (Exception e){
-      System.out.println("Error in BorrowerDAO");
-    }
-    
-    return null;
-  }
 }

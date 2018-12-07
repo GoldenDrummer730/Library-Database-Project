@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.demo.dao;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,15 +9,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.domain.Book_Authors; //Remember to import
-import com.example.mapper.Book_AuthorsMapper;
+import com.example.demo.domain.Book_Authors; //Remember to import
+import com.example.demo.domain.Book_AuthorsMapper;
 
 @Component
 public class Book_AuthorsDAO {
 	
 	@Autowired
 	Book_AuthorsMapper book_AuthorsMapper;
-	
 	
 	public List<Book_Authors> getAuthorNames()
 	{
