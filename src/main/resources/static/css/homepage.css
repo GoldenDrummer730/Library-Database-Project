@@ -1,0 +1,95 @@
+/* comments*/
+h1, h2, h3, h4 {
+		color:#324f9d;
+		padding-left:10px;
+	}
+	h1 {
+		font-size:110%;
+		padding:5px;
+		padding-left:10px;
+		margin:10px;
+		text-align: center;
+		
+	}
+	h2, h3, h4 {
+		padding:5px;
+		padding-left:10px;
+		margin:0px;
+		font-size:100%;
+		font-variant:small-caps;	
+	}
+
+
+	p, ul, dd, dt, dl {
+		padding-left:10px;	
+		padding-right:10px;
+	}
+	li {
+		margin-left:20px;
+		padding-left:5px;
+	}
+	
+	table {
+		margin-left:20px;
+		margin-right:5px;
+		
+		
+	}
+	body {
+		margin:30px;
+		padding:0px;
+		font: 100% sans-serif;
+		background: linear-gradient(to top left, royalblue, lightyellow);
+		background-color: #FFFACD;
+		
+	}
+	
+	a {
+		text-decoration:none;
+		color: #324f9d;
+		font-weight:bold;
+	}
+	a:visited {
+		color: #324f9d;
+	}
+ 
+  #highlight {
+       background-color:  #7FFFD4; /* Aquamarine  */
+  }
+.header 
+{
+	
+
+}
+
+
+  pre.code {
+ 	border: 1px dashed #3c78b5;
+    font-size: 12px;
+	font-family: Courier;
+    margin: 10px;
+	line-height: 13px;
+}
+  
+ table.prettytable {
+  margin: 1em 1em 1em 2em;
+  background: whitesmoke;
+  border-collapse: collapse;
+}
+table.prettytable th, table.prettytable td {
+  border: 1px silver solid;
+  
+  padding: 0.2em;
+}
+table.prettytable th {
+  background: gainsboro;
+  text-align: left;
+}
+table.prettytable caption {
+  margin-left: inherit;
+  margin-right: inherit;
+} 
+
+table.librarytable {
+	
+}
