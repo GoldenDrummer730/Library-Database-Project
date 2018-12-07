@@ -1,37 +1,61 @@
-package com.example.domain;
+package com.example.demo.domain;
+
+import java.math.BigDecimal;
 
 public class Book {
-	private long bookId;
-	private String title;
-	private String publisher;
-	public Book(long bookId, String title, String publisher) {
+	private String BookId;
+	private String Title;
+	private String Publisher;
+	
+	
+	
+	//Remember to create default constructor for other methods
+	/**
+	 * @param BookId
+	 * @param Title
+	 * @param Publisher
+	 * 
+	 */
+	public Book(String BookId, String Title, String Publisher) {
 		super();
-		bookId = bookId;
-		title = title;
-		publisher = publisher;
+		this.BookId = BookId;
+		this.Title = Title;
+		this.Publisher = Publisher;
+		
 	}
-	public long getbookId() {
-		return bookId;
+	
+	public Book()
+	{
+		
 	}
-	public void setbookId(long bookId) {
-		bookId = bookId;
+
+	public String getBookId() {
+		return BookId;
 	}
+
+	public void setBookId(String bookId) {
+		BookId = bookId;
+	}
+
 	public String getTitle() {
-		return title;
+		return Title;
 	}
+
 	public void setTitle(String title) {
-		title = title;
+		Title = title;
 	}
+
 	public String getPublisher() {
-		return publisher;
+		return Publisher;
 	}
+
 	public void setPublisher(String publisher) {
-		publisher = publisher;
+		Publisher = publisher;
 	}
+
 	@Override
 	public String toString() {
-		return "Book [bookId=" + bookId + ", title=" + title + ", publisher=" + publisher + "]";
+		return "Book [BookId=" + BookId + ", Title=" + Title + ", Publisher=" + Publisher + "]";
 	}
-
-
+	
 }

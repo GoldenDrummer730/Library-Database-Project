@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.demo.domain;
 
 import java.math.BigDecimal;
 
@@ -9,7 +9,7 @@ public class Employee {
 	private BigDecimal salary;
 	
 	
-	
+	//Remember to create default constructor for other methods
 	/**
 	 * @param fname
 	 * @param lname
@@ -22,6 +22,9 @@ public class Employee {
 		this.lname = lname;
 		this.ssn = ssn;
 		this.salary = salary;
+	}
+	public Employee() {
+		// TODO Auto-generated constructor stub
 	}
 	public String getFname() {
 		return fname;
@@ -51,7 +54,6 @@ public class Employee {
 	public String toString() {
 		return "Employee [fname=" + fname + ", lname=" + lname + ", ssn=" + ssn + ", salary=" + salary + "]";
 	}
-	
 	
 	
 

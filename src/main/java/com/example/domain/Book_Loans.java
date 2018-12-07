@@ -1,18 +1,17 @@
-package com.example.domain;
+package com.example.demo.domain;
 
-import java.math.BigInteger;
 
 public class Book_Loans 
 {
-	private long BookId;
-	private long BranchId;
-	private BigInteger CardNo;
+	private String BookId;
+	private String BranchId;
+	private String CardNo;
 	private String DateOut;
 	private String DueDate;
 	private String DateIn;
 	private int rating;
 	
-	public Book_Loans(long bookId, long branchId, BigInteger cardNo, String dateOut, String dueDate, String dateIn,
+	public Book_Loans(String bookId, String branchId, String cardNo, String dateOut, String dueDate, String dateIn,
 			int rating) {
 		super();
 		BookId = bookId;
@@ -24,27 +23,31 @@ public class Book_Loans
 		this.rating = rating;
 	}
 
-	public long getBookId() {
+	public Book_Loans()
+	{
+		
+	}
+	public String getBookId() {
 		return BookId;
 	}
 
-	public void setBookId(long bookId) {
+	public void setBookId(String bookId) {
 		BookId = bookId;
 	}
 
-	public long getBranchId() {
+	public String getBranchId() {
 		return BranchId;
 	}
 
-	public void setBranchId(long branchId) {
+	public void setBranchId(String branchId) {
 		BranchId = branchId;
 	}
 
-	public BigInteger getCardNo() {
+	public String getCardNo() {
 		return CardNo;
 	}
 
-	public void setCardNo(BigInteger cardNo) {
+	public void setCardNo(String cardNo) {
 		CardNo = cardNo;
 	}
 

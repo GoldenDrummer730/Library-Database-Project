@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.demo.domain;
 
 import java.math.BigDecimal;
 public class Book_Authors {
@@ -9,7 +9,7 @@ public class Book_Authors {
 
 
 	private String AuthorName;
-	private long BookId;
+	private String BookId;
 	
 	
 	/**
@@ -17,13 +17,17 @@ public class Book_Authors {
 	 * @param BookId
 	 */
 	
-	public Book_Authors(String AuthorName, long BookId)
+	public Book_Authors(String AuthorName, String BookId)
 	{
 		super();
 		this.AuthorName = AuthorName;
 		this.BookId = BookId;
 	}
 
+	public Book_Authors()
+	{
+		
+	}
 
 	public String getAuthorName() {
 		return AuthorName;
@@ -35,12 +39,12 @@ public class Book_Authors {
 	}
 
 
-	public long getBookId() {
+	public String getBookId() {
 		return BookId;
 	}
 
 
-	public void setBookId(long bookId) {
+	public void setBookId(String bookId) {
 		BookId = bookId;
 	}
 	

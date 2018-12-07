@@ -1,56 +1,76 @@
-package com.example.domain;
+package com.example.demo.domain;
 
 import java.math.BigInteger;
 
 public class Borrower {
-	private BigInteger cardNo;
-	private String name;
-	private String address;
-	private BigInteger phone;
-
-	public Borrower(BigInteger cardNo, String name, String address, BigInteger phone) {
+	private String CardNo;
+	private String NAME;
+	private String Address;
+	private String Phone;
+	private String Password;
+	
+	public Borrower(String cardNo, String NAME, String address, String phone, String password) {
 		super();
-		this.cardNo = cardNo;
-		this.name = name;
-		this.address = address;
-		this.phone = phone;
+		CardNo = cardNo;
+		NAME = NAME;
+		Address = address;
+		Phone = phone;
+		Password = password;
 	}
 
-	public BigInteger getcardNo() {
-		return cardNo;
+	public Borrower()
+	{
+		
+	}
+	
+	public String getCardNo() {
+		return CardNo;
 	}
 
-	public void setcardNo(BigInteger cardNo) {
-		cardNo = cardNo;
+	public void setCardNo(String cardNo) {
+		CardNo = cardNo;
 	}
 
-	public String getname() {
-		return name;
+	public String getNAME() {
+		return NAME;
 	}
 
-	public void setname(String name) {
-		name = name;
+	public void setNAME(String nAME) {
+		NAME = nAME;
 	}
 
-	public String getaddress() {
-		return address;
+	public String getAddress() {
+		return Address;
 	}
 
-	public void setaddress(String address) {
-		address = address;
+	public void setAddress(String address) {
+		Address = address;
 	}
 
-	public BigInteger getphone() {
-		return phone;
+	public String getPhone() {
+		return Phone;
 	}
 
-	public void setphone(BigInteger phone) {
-		phone = phone;
+	public void setPhone(String phone) {
+		Phone = phone;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "Borrower [cardNo=" + cardNo + ", name=" + name + ", address=" + address + ", phone=" + phone + "]";
+		return "Borrower [CardNo=" + CardNo + ", NAME=" + NAME + ", Address=" + Address + ", Phone=" + Phone
+				+ ", Password=" + Password + "]";
 	}
 
+	
 }
+	
+	
+

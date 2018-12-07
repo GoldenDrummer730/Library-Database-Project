@@ -1,46 +1,45 @@
-package com.example.domain;
+package com.example.demo.domain;
 
 public class Library_Branch {
 	
-	private long BookId;
-	private long BranchId;
-	private int No_Of_Copies;
+	private String BranchId;
+	private String BranchName;
+	private String Address;
 	
-	public Library_Branch(long bookId, long branchId, int no_Of_Copies) {
-		super();
-		BookId = bookId;
-		BranchId = branchId;
-		No_Of_Copies = no_Of_Copies;
+	public Library_Branch(String branchid, String branchname, String address)
+	{
+		BranchId = branchid;
+		BranchName = branchname;
+		Address = address;
 	}
 
-	public long getBookId() {
-		return BookId;
-	}
-
-	public void setBookId(long bookId) {
-		BookId = bookId;
-	}
-
-	public long getBranchId() {
+	public String getBranchId() {
 		return BranchId;
 	}
 
-	public void setBranchId(long branchId) {
+	public void setBranchId(String branchId) {
 		BranchId = branchId;
 	}
 
-	public int getNo_Of_Copies() {
-		return No_Of_Copies;
+	public String getBranchName() {
+		return BranchName;
 	}
 
-	public void setNo_Of_Copies(int no_Of_Copies) {
-		No_Of_Copies = no_Of_Copies;
+	public void setBranchName(String branchName) {
+		BranchName = branchName;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Library_Branch [BookId=" + BookId + ", BranchId=" + BranchId + ", No_Of_Copies=" + No_Of_Copies + "]";
+		return "Library_Branch [BranchId=" + BranchId + ", BranchName=" + BranchName + ", Address=" + Address + "]";
 	}
-	
 	
 }

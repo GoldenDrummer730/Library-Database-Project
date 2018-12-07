@@ -1,9 +1,9 @@
-package com.example.domain;
+package com.example.demo.domain;
 
 public class Book_Copies {
 	
-	private long BookId;
-	private long BranchId;
+	private String BookId;
+	private String BranchId;
 	private int No_Of_Copies;
 	
 	/**
@@ -12,7 +12,7 @@ public class Book_Copies {
 	 * @Param No_Of_Copies
 	 */
 	
-	public Book_Copies (long BookId, long BranchId, int No_Of_Copies)
+	public Book_Copies (String BookId, String BranchId, int No_Of_Copies)
 	{
 		super();
 		this.BookId = BookId;
@@ -20,24 +20,28 @@ public class Book_Copies {
 		this.No_Of_Copies = No_Of_Copies;
 	}
 	
+	public Book_Copies()
+	{
+		
+	}
 	@Override
 	public String toString() {
 		return "Book_Copies [BookId=" + BookId + ", BranchId=" + BranchId + ", No_Of_Copies=" + No_Of_Copies + "]";
 	}
 
-	public long getBookId() {
+	public String getBookId() {
 		return BookId;
 	}
 
-	public void setBookId(long bookId) {
+	public void setBookId(String bookId) {
 		BookId = bookId;
 	}
 
-	public long getBranchId() {
+	public String getBranchId() {
 		return BranchId;
 	}
 
-	public void setBranchId(long branchId) {
+	public void setBranchId(String branchId) {
 		BranchId = branchId;
 	}
 
