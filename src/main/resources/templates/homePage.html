@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/homePage.css" />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+</head>
+
+
+<h4 th:text="'Welcome to the Library, ' + ${name} + ''" h4/> 
+	 <!-- Get the name from the user. -->
+	 <!-- Can't seem to import Lombok -->
+
+
+<body>
+
+    <!-- Search for a book (with dropdown to select branch)-->
+   
+    <input type = "text" name="search" placeholder="Find a book..." >
+    
+    <!--  Select the branch -->
+    <select th:field="*{dropdownSelectedValue}">
+    <option 
+    		th:each="dropdownValue: ${singleSelectAllValues}"
+    		th:value="${dropdownValue}"
+    		th:text="$dropdownValue}" ></option>
+    </select>
+    
+    <!--  Script to run query based on user selection -->
+    <!-- Filter books based on branch selected: <select id = "dropdown2"> </select> -->
+    
+    
+    <button>Search</button>
+   
+   <!-- Button to view books available: -->
+   	<br> <button>View Catalog</button> <br>
+   	
+   	<!--  -->
+</body>
+</html>
