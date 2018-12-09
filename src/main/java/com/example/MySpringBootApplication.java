@@ -1,11 +1,9 @@
-package com.example;
+package com.example.demo;
 
-import org.springframework.boot.*;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
-
-@SpringBootApplication(scanBasePackages = {"com.example.demo.domain", "com.example.demo.dao", "com.example.demo.service"})
+@SpringBootApplication
 public class MySpringBootApplication {
 
 	public static void main(String[] args) {
