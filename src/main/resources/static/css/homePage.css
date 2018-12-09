@@ -1,0 +1,26 @@
+h4
+{
+	font style = TimesNewRoman;
+}
+
+imput[type=text]
+{
+	width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transitino: width 0.4s ease-in-out;
+}
+button
+{
+	margin-right:-3px;
+	background-color: red;
+}
