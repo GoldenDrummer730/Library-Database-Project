@@ -18,6 +18,14 @@ public class Borrower {
 		Password = password;
 	}
 
+	public Borrower(String cardNo, String password)
+	{
+		CardNo = cardNo;
+		Password = password;
+		Address = null;
+		Phone = null;
+		NAME = null;
+	}
 	public Borrower()
 	{
 		
