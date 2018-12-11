@@ -1,7 +1,8 @@
-package com.example.controller;
-
+package com.example.demo;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,38 +10,66 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.domain.Book;
-import com.example.domain.Book_Authors;
-import com.example.domain.Employee;
-import com.example.service.BookService;
-import com.example.service.Book_AuthorService;
-import com.example.service.EmployeeService;
-
+import com.example.demo.domain.Book;
+import com.example.demo.domain.Borrower;
+import com.example.demo.service.BookService;
+import com.example.demo.service.BorrowerService;
+import com.example.demo.domain.FormCommand;
 @Controller
 public class LibraryController {
-	@Autowired
-	Book_AuthorService authorService;
-
+	
 	@Autowired
 	BookService bookService;
+	BorrowerService borrowerService = new BorrowerService();
+    @GetMapping("/books") //Go to localhost:8080/employees
+    public String getBooks(Model model) {
+    	System.out.println("inside /books");
 
-    @GetMapping("/authornames")
-    public String getAuthorName(Model model) { //The model applies the business logic
-    	List<Book_Authors> authorList = new ArrayList<Book_Authors>();
-    	authorList = authorService.getAuthorNames();
-        model.addAttribute("authorList", authorList);
-        return "authorLanding";
+    	List<Book> bookList = new ArrayList<Book>();
+    	bookList = bookService.getBookList();
+        model.addAttribute("bookList", bookList);
+        return "bookLanding";
     }
+    
 
-	@GetMapping("/shop")
-	public String viewBooks(Model model){
-		List<Book> booksList = new ArrayList<Book>();
-		booksList = bookService.getAllBooks();
-		model.addAttribute("booksList", booksList);
-		return "booksList";
-	}
+    @GetMapping("/login")
+    public String login(Model model)
+    {
+    	
+    	return "login";
+    }
+    
+
+    @RequestMapping(value = "/loginCheck", method = RequestMethod.GET) //Post data to server (results)
+    public String checkLogin(HttpServletRequest request,  Model model)
+    {
+    	String card = request.getParameter("cardno");
+    	String pass = request.getParameter("password");
+    	System.out.println("in checkLogin + cardno = " + card);
+    	System.out.println("password = :" + pass);
+    	boolean loggedin = borrowerService.checkLogin(card, pass);
+    	
+    	if (loggedin == true)
+    	{
+    		return "bookLanding"; //If credentials correct proceed
+    	}
+    	else 
+    	{
+    		model.addAttribute("message", "Incorrect login. Try again."); //Should clear screen with message
+    		return "login";
+    	}
+    }
+    
+    
+    
+    
+
 
 
 }
