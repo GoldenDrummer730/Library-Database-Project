@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.dao.BorrowerDAO;
 import com.example.demo.dao.EmployeeDAO;
 import com.example.demo.domain.Borrower;
-
+import com.example.demo.domain.*;
 
 @Component
 public class BorrowerService {
@@ -31,12 +31,23 @@ public class BorrowerService {
 		return borrowerList;
 	}
 	
+	public List<CheckedOutBooks> getCheckedOut(Borrower borrower)
+	{
+		List<CheckedOutBooks> checkedOutList = new ArrayList<CheckedOutBooks>();
+		checkedOutList = borrowerDAO.getCheckedOut(borrower);
+		return checkedOutList;
+	}
 	public void insertNewBorrower(Borrower borrower)
 	{
 		BorrowerDAO borrowerDAO = new BorrowerDAO();
 		borrowerDAO.insertNewBorrower(borrower);
 	}
 	
-	
+	public boolean checkLogin(String cardno, String pass)
+	{
+		System.out.println(cardno + "HELLO" +  pass); //Pass in a borrower object with the method?
+		BorrowerDAO borrowerDAO = new BorrowerDAO();
+		return borrowerDAO.checkLogin(cardno, pass);
+	}
 
 }
