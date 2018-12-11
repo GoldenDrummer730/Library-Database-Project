@@ -20,20 +20,33 @@
    
     <input type = "text" name="search" placeholder="Find a book..." >
     
-    <!--  Select the branch -->
+    <!--  Select the branch 
     <select th:field="*{dropdownSelectedValue}">
     <option 
     		th:each="dropdownValue: ${singleSelectAllValues}"
     		th:value="${dropdownValue}"
     		th:text="$dropdownValue}" ></option>
-    </select>
+    </select> -->
+    
+    <!--  View all books -->
+    
+    <!--  View all checked out books -->
+    
     
     <!--  Script to run query based on user selection -->
     <!-- Filter books based on branch selected: <select id = "dropdown2"> </select> -->
     
     
-    <button>Search</button>
-   
+    <button>Search</button> <br>
+    
+    <tr>
+    <th>Insert your card number to view books checked out</th>
+    </tr>
+    
+    
+  	<!--  See emplist code to add a new borrower-  or we can use the model -->
+     <a th:href="@{'/viewCheckedOut/' + ${borrower.CardNo}}">View your checked out books</a> 
+  
    <!-- Button to view books available: -->
    	<br> <button>View Catalog</button> <br>
    	
